@@ -1,5 +1,5 @@
 {% set name = "enterprise_extensions" %}
-{% set version = "2.3.4" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5f90cad086afccdfd9efc7c8118c02e0ced1bf3a195239dab3dd7edd22867a47
+  sha256: dce7f265b7129a0590471908fb50057273ceec1dbcf606135befacf3200805dc
 
 build:
   noarch: python
