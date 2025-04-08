@@ -1,5 +1,7 @@
 {% set name = "enterprise_extensions" %}
 {% set version = "3.0.2" %}
+{% set python_min = "3.9" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -16,22 +18,27 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy >=1.16.3
     - scipy >=1.2.0
     - ephem >=3.7.6.0
     - healpy >=1.14.0
     - scikit-sparse >=0.4.5
-    - pint-pulsar >=0.8.2
-    - libstempo >=2.4.0
-    - enterprise-pulsar >=3.1.0
+    - enterprise-pulsar >=3.4.4
+    - pyarrow >=16.1.0
+    - scikit-learn >=0.24
+    - matplotlib >=3.1.0
+    - six
     - emcee
     - ptmcmcsampler
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - enterprise_extensions
     - enterprise_extensions.chromatic
